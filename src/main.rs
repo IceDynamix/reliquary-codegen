@@ -1,8 +1,7 @@
-use quote::{format_ident, quote, ToTokens};
+use quote::{format_ident, quote};
 use serde_json::Value;
 use std::env;
 use std::fs::File;
-use std::io::Write;
 use std::path::{Path, PathBuf};
 
 fn main() {
@@ -14,7 +13,7 @@ fn main() {
     let reliquary_path = Path::new(args[1].as_str());
     let data_path = Path::new(args[2].as_str());
 
-    // protos(reliquary_path, data_path);
+    protos(reliquary_path, data_path);
     packet_id(reliquary_path, data_path);
 }
 
